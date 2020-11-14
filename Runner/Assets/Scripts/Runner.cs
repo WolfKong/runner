@@ -10,6 +10,8 @@ public class Runner : MonoBehaviour
     [SerializeField] private CharacterController characterController;
 
     private Vector3 direction;
+    private float targetXPosition;
+    private int targetXDirection;
     private int currentLine;
 
     private void Start()
@@ -28,6 +30,15 @@ public class Runner : MonoBehaviour
         TouchInput.UpInputEvent -= OnUpInput;
         TouchInput.LeftInputEvent -= OnLeftInput;
         TouchInput.RightInputEvent -= OnRightInput;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // Don't die when hitting from above
+        if (hit.moveDirection.y < -0.3)
+            return;
+
+        Debug.LogWarning($"PV-GAME OVER");
     }
 
     private void OnMicInput() => Jump();
@@ -59,7 +70,8 @@ public class Runner : MonoBehaviour
 
     private void ChangeLine()
     {
-        var targetXDirection = transform.position.x > currentLine * lineDistance ? -1 : 1;
+        targetXPosition = currentLine * lineDistance;
+        targetXDirection = transform.position.x > targetXPosition ? -1 : 1;
 
         direction.x = targetXDirection * sideStepSpeed;
     }
@@ -72,8 +84,14 @@ public class Runner : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Mathf.Approximately(transform.position.x, currentLine * lineDistance))
-            direction.x = 0;
+        if (direction.x != 0)
+        {
+            var deltaX = transform.position.x - targetXPosition;
+            if (Mathf.Approximately(deltaX, 0) ||
+                (targetXDirection > 0 && deltaX > 0) ||
+                (targetXDirection < 0 && deltaX < 0))
+                direction.x = 0;
+        }
 
         characterController.Move(direction * Time.fixedDeltaTime);
     }
