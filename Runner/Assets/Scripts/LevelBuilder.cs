@@ -5,7 +5,6 @@ public class LevelBuilder : MonoBehaviour
 {
     [SerializeField] private LevelData data;
     [SerializeField] private CharacterData characterData;
-    [SerializeField] private LevelTile tilePrefab;
     [SerializeField] private float tileSize;
 
     private int tileCount = 0;
@@ -36,7 +35,8 @@ public class LevelBuilder : MonoBehaviour
     {
         tileCount++;
 
-        var tile = Instantiate(tilePrefab, transform);
+        var levelTiles = data.LevelTiles;
+        var tile = Instantiate(levelTiles[Random.Range(0, levelTiles.Length)], transform);
         tile.SetData(data);
         tile.transform.localPosition = new Vector3(0, 0, tileCount * tileSize);
         tiles.Add(tile.gameObject);

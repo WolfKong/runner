@@ -8,6 +8,7 @@ public class LevelData : ScriptableObject
     public Material FloorMaterial;
     public Material ObstacleMaterial;
     public Material EnemyMaterial;
+    public LevelTile[] LevelTiles;
 
     public override string ToString()
     {
