@@ -5,6 +5,7 @@ using UnityEngine;
 [Serializable]
 public class LevelData : ScriptableObject
 {
+    public Sprite MenuImage;
     public Material FloorMaterial;
     public Material ObstacleMaterial;
     public Material EnemyMaterial;
