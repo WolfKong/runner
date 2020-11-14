@@ -1,9 +1,21 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class TouchInput : MonoBehaviour
+public class TouchInput : MonoBehaviour, IPointerClickHandler
 {
+    [SerializeField] private RectTransform rectTransform;
+
     public static event Action UpInputEvent;
+    public static event Action RightInputEvent;
+    public static event Action LeftInputEvent;
+
+    private float screenMiddle;
+
+    private void Start()
+    {
+        screenMiddle = rectTransform.rect.width / 2;
+    }
 
     private void Update()
     {
@@ -12,5 +24,13 @@ public class TouchInput : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
             UpInputEvent?.Invoke();
+    }
+
+    public void OnPointerClick(PointerEventData pointerEventData)
+    {
+        if (pointerEventData.position.x > screenMiddle)
+            RightInputEvent?.Invoke();
+        else
+            LeftInputEvent?.Invoke();
     }
 }
