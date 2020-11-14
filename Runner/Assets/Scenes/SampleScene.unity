@@ -950,7 +950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 67964f67330352548bff79187849f209, type: 2}
   characterData: {fileID: 11400000, guid: 0f38bac73cf293c49bdc3ea75b4cc4b3, type: 2}
-  tilePrefab: {fileID: 3692338051553532824, guid: 88a92d9f46793344fa5d84731e54306e, type: 3}
+  tilePrefab: {fileID: 1294505247991906981, guid: 88a92d9f46793344fa5d84731e54306e, type: 3}
   tileSize: 50
 --- !u!4 &2129277764
 Transform:

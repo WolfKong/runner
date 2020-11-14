@@ -5,13 +5,13 @@ public class LevelBuilder : MonoBehaviour
 {
     [SerializeField] private LevelData data;
     [SerializeField] private CharacterData characterData;
-    [SerializeField] private Transform tilePrefab;
+    [SerializeField] private LevelTile tilePrefab;
     [SerializeField] private float tileSize;
 
     private int tileCount = 0;
     private float time;
     private float spawnInterval;
-    private List<Transform> tiles = new List<Transform>();
+    private List<GameObject> tiles = new List<GameObject>();
 
     void Start()
     {
@@ -37,12 +37,13 @@ public class LevelBuilder : MonoBehaviour
         tileCount++;
 
         var tile = Instantiate(tilePrefab, transform);
-        tile.localPosition = new Vector3(0, 0, tileCount * tileSize);
-        tiles.Add(tile);
+        tile.SetData(data);
+        tile.transform.localPosition = new Vector3(0, 0, tileCount * tileSize);
+        tiles.Add(tile.gameObject);
 
         if (tiles.Count > 5)
         {
-            Destroy(tiles[0].gameObject);
+            Destroy(tiles[0]);
             tiles.RemoveAt(0);
         }
     }
