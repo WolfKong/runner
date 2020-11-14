@@ -8,7 +8,7 @@ public class MicInput : MonoBehaviour
     [SerializeField] private float inputThreshold = 0.25f;
     [SerializeField] private AudioSource audioSource;
 
-    public event Action MicInputEvent;
+    public static event Action MicInputEvent;
 
     private float time = 0;
 
