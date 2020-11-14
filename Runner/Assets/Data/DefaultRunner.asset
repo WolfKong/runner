@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f9d485bd42c2147adf273f47f2fd7f, type: 3}
   m_Name: DefaultRunner
   m_EditorClassIdentifier: 
-  ForwardSpeed: 8
+  ForwardSpeed: 15
   SideStepSpeed: 20
   JumpForce: 13

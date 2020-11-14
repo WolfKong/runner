@@ -948,9 +948,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933bc5d039212654c8cb8ecf8fda2579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 67964f67330352548bff79187849f209, type: 2}
+  data: {fileID: 11400000, guid: 87a8063a23eea7245881fae42e326e50, type: 2}
   characterData: {fileID: 11400000, guid: 0f38bac73cf293c49bdc3ea75b4cc4b3, type: 2}
-  tilePrefab: {fileID: 1294505247991906981, guid: 88a92d9f46793344fa5d84731e54306e, type: 3}
   tileSize: 50
 --- !u!4 &2129277764
 Transform:
