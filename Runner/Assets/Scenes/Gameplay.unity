@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933bc5d039212654c8cb8ecf8fda2579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 87a8063a23eea7245881fae42e326e50, type: 2}
+  levelData: {fileID: 11400000, guid: 87a8063a23eea7245881fae42e326e50, type: 2}
   characterData: {fileID: 11400000, guid: 0f38bac73cf293c49bdc3ea75b4cc4b3, type: 2}
   tileSize: 50
 --- !u!4 &2129277764

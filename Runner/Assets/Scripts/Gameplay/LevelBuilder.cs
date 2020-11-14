@@ -14,7 +14,7 @@ public class LevelBuilder : MonoBehaviour
 
     void Start()
     {
-        levelData = GameProgress.CurrentLevel;
+        levelData = GameProgress.CurrentLevel ?? levelData;
 
         spawnInterval = tileSize / characterData.ForwardSpeed;
 
@@ -37,10 +37,12 @@ public class LevelBuilder : MonoBehaviour
     {
         tileCount++;
 
+        var position = new Vector3(0, 0, tileCount * tileSize);
         var levelTiles = levelData.LevelTiles;
-        var tile = Instantiate(levelTiles[Random.Range(0, levelTiles.Length)], transform);
+        var prefab = levelTiles[Random.Range(0, levelTiles.Length)];
+
+        var tile = Instantiate(prefab, position, Quaternion.identity, transform);
         tile.SetData(levelData);
-        tile.transform.localPosition = new Vector3(0, 0, tileCount * tileSize);
         tiles.Add(tile.gameObject);
 
         if (tiles.Count > 5)

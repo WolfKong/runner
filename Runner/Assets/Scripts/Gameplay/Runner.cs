@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Runner : MonoBehaviour
 {
@@ -36,7 +37,7 @@ public class Runner : MonoBehaviour
         if (hit.moveDirection.y < -0.3)
             return;
 
-        Debug.LogWarning($"PV-GAME OVER");
+        SceneManager.LoadScene("GameOver");
     }
 
     private void OnMicInput() => Jump();
