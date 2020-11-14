@@ -4,24 +4,28 @@ using UnityEngine;
 public class LevelBuilder : MonoBehaviour
 {
     [SerializeField] private LevelData data;
+    [SerializeField] private CharacterData characterData;
     [SerializeField] private Transform tilePrefab;
     [SerializeField] private float tileSize;
 
     private int tileCount = 0;
+    private float time;
+    private float spawnInterval;
     private List<Transform> tiles = new List<Transform>();
 
     void Start()
     {
+        spawnInterval = tileSize / characterData.ForwardSpeed;
+
         CreateTile();
         CreateTile();
         CreateTile();
     }
 
-    float time;
     void Update()
     {
         time += Time.deltaTime;
-        if (time > 5)
+        if (time > spawnInterval)
         {
             time = 0;
             CreateTile();

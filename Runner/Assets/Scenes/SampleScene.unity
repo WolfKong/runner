@@ -623,9 +623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0fae7672d73104faa377747135288f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 10
-  sideStepSpeed: 20
-  jumpForce: 10
+  characterData: {fileID: 11400000, guid: 0f38bac73cf293c49bdc3ea75b4cc4b3, type: 2}
   gravity: 20
   lineDistance: 3
   characterController: {fileID: 1289960193}
@@ -951,6 +949,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 67964f67330352548bff79187849f209, type: 2}
+  characterData: {fileID: 11400000, guid: 0f38bac73cf293c49bdc3ea75b4cc4b3, type: 2}
   tilePrefab: {fileID: 3692338051553532824, guid: 88a92d9f46793344fa5d84731e54306e, type: 3}
   tileSize: 50
 --- !u!4 &2129277764

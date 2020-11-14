@@ -2,9 +2,7 @@
 
 public class Runner : MonoBehaviour
 {
-    [SerializeField] private float forwardSpeed;
-    [SerializeField] private float sideStepSpeed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private CharacterData characterData;
     [SerializeField] private float gravity;
     [SerializeField] private float lineDistance;
     [SerializeField] private CharacterController characterController;
@@ -20,7 +18,7 @@ public class Runner : MonoBehaviour
         TouchInput.UpInputEvent += OnUpInput;
         TouchInput.LeftInputEvent += OnLeftInput;
         TouchInput.RightInputEvent += OnRightInput;
-        direction = new Vector3(0, 0, forwardSpeed);
+        direction = new Vector3(0, 0, characterData.ForwardSpeed);
         currentLine = 0;
     }
 
@@ -65,7 +63,7 @@ public class Runner : MonoBehaviour
     private void Jump()
     {
         if (characterController.isGrounded)
-            direction.y = jumpForce;
+            direction.y = characterData.JumpForce;
     }
 
     private void ChangeLine()
@@ -73,7 +71,7 @@ public class Runner : MonoBehaviour
         targetXPosition = currentLine * lineDistance;
         targetXDirection = transform.position.x > targetXPosition ? -1 : 1;
 
-        direction.x = targetXDirection * sideStepSpeed;
+        direction.x = targetXDirection * characterData.SideStepSpeed;
     }
 
     private void Update()
