@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LevelBuilder : MonoBehaviour
 {
-    [SerializeField] private LevelData data;
+    [SerializeField] private LevelData levelData;
     [SerializeField] private CharacterData characterData;
     [SerializeField] private float tileSize;
 
@@ -14,6 +14,8 @@ public class LevelBuilder : MonoBehaviour
 
     void Start()
     {
+        levelData = GameProgress.CurrentLevel;
+
         spawnInterval = tileSize / characterData.ForwardSpeed;
 
         CreateTile();
@@ -35,9 +37,9 @@ public class LevelBuilder : MonoBehaviour
     {
         tileCount++;
 
-        var levelTiles = data.LevelTiles;
+        var levelTiles = levelData.LevelTiles;
         var tile = Instantiate(levelTiles[Random.Range(0, levelTiles.Length)], transform);
-        tile.SetData(data);
+        tile.SetData(levelData);
         tile.transform.localPosition = new Vector3(0, 0, tileCount * tileSize);
         tiles.Add(tile.gameObject);
 

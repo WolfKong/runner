@@ -21,15 +21,7 @@ public class LevelList : MonoBehaviour
         foreach (var levelData in levelDatas)
         {
             var button = Instantiate<LevelButton>(buttonPrefab, transform);
-            // button.Button.onClick.AddListener(() => OnClick(levelData));
             button.SetData(levelData);
         }
     }
-
-    // private void OnClick(LevelData data)
-    // {
-    //     levelView.SetLevel(data);
-
-    //     gameObject.SetActive(false);
-    // }
 }
