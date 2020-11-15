@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "LevelData", menuName = "ScriptableObjects/LevelData", order = 1)]
+[CreateAssetMenu(fileName = "LevelData", menuName = "ScriptableObjects/LevelData")]
 [Serializable]
 public class LevelData : ScriptableObject
 {

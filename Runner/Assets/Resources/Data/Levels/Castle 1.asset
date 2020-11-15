@@ -20,3 +20,4 @@ MonoBehaviour:
   LevelTiles:
   - {fileID: 1294505247991906981, guid: 532b016e902860e46a1eef50da79a235, type: 3}
   - {fileID: 1294505247991906981, guid: 6aa6efaa21458e148a5cf5dbe8f39067, type: 3}
+  - {fileID: 1294505247991906981, guid: abf0d9499258f8947a73441a26c325e3, type: 3}

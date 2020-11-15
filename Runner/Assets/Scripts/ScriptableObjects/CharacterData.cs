@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CharacterData", menuName = "ScriptableObjects/CharacterData", order = 2)]
+[CreateAssetMenu(fileName = "CharacterData", menuName = "ScriptableObjects/CharacterData")]
 [Serializable]
 public class CharacterData : ScriptableObject
 {
