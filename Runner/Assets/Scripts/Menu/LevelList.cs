@@ -9,7 +9,7 @@ public class LevelList : MonoBehaviour
 
     private void Awake()
     {
-        var levels = Resources.LoadAll("", typeof(LevelData));
+        var levels = Resources.LoadAll("Data/Levels", typeof(LevelData));
 
         levelDatas = new List<LevelData>();
         foreach (var level in levels)

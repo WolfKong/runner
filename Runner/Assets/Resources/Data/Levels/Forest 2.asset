@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87a81d212f43b2d47a1e0e9351df2352, type: 3}
   m_Name: Forest 2
   m_EditorClassIdentifier: 
-  TargetScore: 10
+  TargetScore: 50
   MenuImage: {fileID: 0}
   FloorMaterial: {fileID: 2100000, guid: 812ee94d2ccd1834e97196ae4bed4355, type: 2}
   ObstacleMaterial: {fileID: 2100000, guid: 6fcf02973814b694c8ca22f3285c0473, type: 2}
