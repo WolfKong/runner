@@ -6,6 +6,7 @@ public class LevelButton : MonoBehaviour
     [SerializeField] private GameplayData gameplayData;
     [SerializeField] private Image image;
     [SerializeField] private Text nameText;
+    [SerializeField] private Text targetScore;
     [SerializeField] private Button button;
 
     private LevelData levelData;
@@ -20,6 +21,7 @@ public class LevelButton : MonoBehaviour
         levelData = data;
         image.sprite = data.MenuImage;
         nameText.text = data.name;
+        targetScore.text = $"Target: {data.TargetScore}";
     }
 
     private void OnClick()
