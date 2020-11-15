@@ -16,8 +16,12 @@ public class Coin : MonoBehaviour
         if (collider.gameObject.tag == "Player")
         {
             playerScore.Value++;
-            transform.DOKill();
             Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        transform.DOKill();
     }
 }
