@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameOverScreen : MonoBehaviour
@@ -18,11 +17,11 @@ public class GameOverScreen : MonoBehaviour
 
     private void GoToMenu()
     {
-        SceneManager.LoadScene("Menu");
+        SceneLoader.LoadScene("Menu");
     }
 
     private void RetryLevel()
     {
-        SceneManager.LoadScene("Gameplay");
+        SceneLoader.LoadScene("Gameplay");
     }
 }

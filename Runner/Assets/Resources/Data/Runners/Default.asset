@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6aa45ccdf6528ec4db2c911d39302d23, type: 3}
-  m_Name: GameplayData
+  m_Script: {fileID: 11500000, guid: e8f9d485bd42c2147adf273f47f2fd7f, type: 3}
+  m_Name: Default
   m_EditorClassIdentifier: 
-  LevelData: {fileID: 11400000, guid: 87a8063a23eea7245881fae42e326e50, type: 2}
-  CharacterData: {fileID: 11400000, guid: b0580d6578b9f39418af99a0d59aa5fa, type: 2}
+  ForwardSpeed: 15
+  SideStepSpeed: 20
+  JumpForce: 14
+  Gravity: 30
+  Material: {fileID: 2100000, guid: 8cd76f4e4d0078b4caf168dc193fe72e, type: 2}

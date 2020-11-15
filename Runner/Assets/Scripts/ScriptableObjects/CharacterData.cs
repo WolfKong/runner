@@ -9,6 +9,7 @@ public class CharacterData : ScriptableObject
     public float SideStepSpeed;
     public float JumpForce;
     public float Gravity;
+    public Material Material;
 
     public override string ToString()
     {
