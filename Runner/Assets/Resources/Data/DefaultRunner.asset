@@ -15,3 +15,4 @@ MonoBehaviour:
   ForwardSpeed: 15
   SideStepSpeed: 20
   JumpForce: 13
+  Gravity: 25

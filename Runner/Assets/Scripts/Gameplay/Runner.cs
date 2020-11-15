@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 public class Runner : MonoBehaviour
 {
     [SerializeField] private CharacterData characterData;
-    [SerializeField] private float gravity;
     [SerializeField] private float lineDistance;
     [SerializeField] private CharacterController characterController;
 
@@ -78,7 +77,7 @@ public class Runner : MonoBehaviour
     private void Update()
     {
         if (!characterController.isGrounded)
-            direction.y -= gravity * Time.deltaTime;
+            direction.y -= characterData.Gravity * Time.deltaTime;
     }
 
     private void FixedUpdate()
