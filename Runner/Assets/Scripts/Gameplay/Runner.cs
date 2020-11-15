@@ -3,10 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class Runner : MonoBehaviour
 {
-    [SerializeField] private CharacterData characterData;
+    [SerializeField] private GameplayData gameplayData;
+
     [SerializeField] private float lineDistance;
     [SerializeField] private CharacterController characterController;
 
+    private CharacterData characterData;
     private Vector3 direction;
     private float targetXPosition;
     private int targetXDirection;
@@ -14,12 +16,14 @@ public class Runner : MonoBehaviour
 
     private void Start()
     {
+        characterData = gameplayData.CharacterData;
+        direction = new Vector3(0, 0, characterData.ForwardSpeed);
+        currentLine = 0;
+
         MicInput.MicInputEvent += OnMicInput;
         TouchInput.UpInputEvent += OnUpInput;
         TouchInput.LeftInputEvent += OnLeftInput;
         TouchInput.RightInputEvent += OnRightInput;
-        direction = new Vector3(0, 0, characterData.ForwardSpeed);
-        currentLine = 0;
     }
 
     private void OnDestroy()

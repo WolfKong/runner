@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour
 {
+    [SerializeField] private GameplayData gameplayData;
     [SerializeField] private Image image;
     [SerializeField] private Text nameText;
     [SerializeField] private Button button;
@@ -24,7 +25,7 @@ public class LevelButton : MonoBehaviour
 
     private void OnClick()
     {
-        GameProgress.CurrentLevel = levelData;
+        gameplayData.LevelData = levelData;
         SceneManager.LoadScene("Gameplay");
     }
 }

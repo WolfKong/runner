@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1217695236}
+  playerScore: {fileID: 11400000, guid: b7e51c9a8ba322845a78e49586f71cd6, type: 2}
   menuButton: {fileID: 8211013290297505024}
   retryButton: {fileID: 1911159440}
 --- !u!1 &1806830123

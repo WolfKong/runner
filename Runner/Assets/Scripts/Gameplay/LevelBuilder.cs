@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class LevelBuilder : MonoBehaviour
 {
-    [SerializeField] private LevelData levelData;
-    [SerializeField] private CharacterData characterData;
+    [SerializeField] private GameplayData gameplayData;
     [SerializeField] private float tileSize;
 
+    private LevelData levelData;
     private int tileCount = 0;
     private float time;
     private float spawnInterval;
@@ -14,10 +14,11 @@ public class LevelBuilder : MonoBehaviour
 
     void Start()
     {
-        levelData = GameProgress.CurrentLevel ?? levelData;
+        levelData = gameplayData.LevelData;
 
-        spawnInterval = tileSize / characterData.ForwardSpeed;
+        spawnInterval = tileSize / gameplayData.CharacterData.ForwardSpeed;
 
+        CreateTile();
         CreateTile();
         CreateTile();
         CreateTile();

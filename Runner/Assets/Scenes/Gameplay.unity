@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0fae7672d73104faa377747135288f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: 0f38bac73cf293c49bdc3ea75b4cc4b3, type: 2}
+  gameplayData: {fileID: 11400000, guid: 284df63aa8778ad4dbe19c07f7c239bf, type: 2}
   lineDistance: 3
   characterController: {fileID: 1289960193}
 --- !u!1 &1387288270
@@ -1180,6 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerScore: {fileID: 11400000, guid: b7e51c9a8ba322845a78e49586f71cd6, type: 2}
+  gameplayData: {fileID: 11400000, guid: 284df63aa8778ad4dbe19c07f7c239bf, type: 2}
 --- !u!1 &1715141521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,8 +1569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933bc5d039212654c8cb8ecf8fda2579, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 11400000, guid: 71053d81d3fd7d94b912609443e5e280, type: 2}
-  characterData: {fileID: 11400000, guid: 0f38bac73cf293c49bdc3ea75b4cc4b3, type: 2}
+  gameplayData: {fileID: 11400000, guid: 284df63aa8778ad4dbe19c07f7c239bf, type: 2}
   tileSize: 50
 --- !u!4 &2129277764
 Transform:

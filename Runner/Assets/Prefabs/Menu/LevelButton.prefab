@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d22368e77f1694c9ee5bb847eaaf21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameplayData: {fileID: 11400000, guid: 284df63aa8778ad4dbe19c07f7c239bf, type: 2}
   image: {fileID: 3656295794177705384}
   nameText: {fileID: 4494839540319117834}
   button: {fileID: 6090787401156334855}
