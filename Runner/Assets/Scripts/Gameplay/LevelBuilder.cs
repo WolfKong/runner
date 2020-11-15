@@ -14,6 +14,7 @@ public class LevelBuilder : MonoBehaviour
 
     void Start()
     {
+        GameProgress.CurrentScore = 0;
         levelData = GameProgress.CurrentLevel ?? levelData;
 
         spawnInterval = tileSize / characterData.ForwardSpeed;

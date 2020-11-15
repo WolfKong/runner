@@ -4,11 +4,13 @@ using UnityEngine.UI;
 
 public class GameOverScreen : MonoBehaviour
 {
+    [SerializeField] private Text scoreText;
     [SerializeField] private Button menuButton;
     [SerializeField] private Button retryButton;
 
     void Start()
     {
+        scoreText.text = $"Score: {GameProgress.CurrentScore}";
         menuButton.onClick.AddListener(GoToMenu);
         retryButton.onClick.AddListener(RetryLevel);
     }
