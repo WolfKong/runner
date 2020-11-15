@@ -264,7 +264,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4cfda3ba5383e4b4283bd0f5d892ea1b, type: 3}
     m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1217695236}
+  playerScore: {fileID: 11400000, guid: b7e51c9a8ba322845a78e49586f71cd6, type: 2}
   menuButton: {fileID: 8211013290297505024}
   retryButton: {fileID: 1911159440}
 --- !u!1 &1806830123
@@ -736,7 +737,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4cfda3ba5383e4b4283bd0f5d892ea1b, type: 3}
     m_FontSize: 72
     m_FontStyle: 0
     m_BestFit: 0
