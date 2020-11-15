@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelButton : MonoBehaviour
@@ -26,6 +25,6 @@ public class LevelButton : MonoBehaviour
     private void OnClick()
     {
         gameplayData.LevelData = levelData;
-        SceneManager.LoadScene("Gameplay");
+        SceneLoader.LoadScene("Gameplay");
     }
 }

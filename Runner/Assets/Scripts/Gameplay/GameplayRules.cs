@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameplayRules : MonoBehaviour
 {
@@ -7,16 +6,21 @@ public class GameplayRules : MonoBehaviour
     [SerializeField] private GameplayData gameplayData;
 
     private LevelData levelData;
+    private bool gameOver;
 
     void Start()
     {
+        gameOver = false;
         playerScore.Value = 0;
         levelData = gameplayData.LevelData;
     }
 
     private void Update()
     {
-        if (playerScore.Value >= levelData.TargetScore)
-            SceneManager.LoadScene("LevelComplete");
+        if (!gameOver && playerScore.Value >= levelData.TargetScore)
+        {
+            gameOver = true;
+            SceneLoader.LoadScene("LevelComplete");
+        }
     }
 }
