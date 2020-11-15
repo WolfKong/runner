@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Forest 2
   m_EditorClassIdentifier: 
   TargetScore: 50
-  MenuImage: {fileID: 0}
+  MenuImage: {fileID: 21300000, guid: 35f0addb6e66be04487cb11a8ff4ba36, type: 3}
   FloorMaterial: {fileID: 2100000, guid: 812ee94d2ccd1834e97196ae4bed4355, type: 2}
   ObstacleMaterial: {fileID: 2100000, guid: 6fcf02973814b694c8ca22f3285c0473, type: 2}
   EnemyMaterial: {fileID: 0}
   LevelTiles:
-  - {fileID: 1294505247991906981, guid: c4dafe6695c3dd2428e026c7dfa84b2b, type: 3}
-  - {fileID: 1294505247991906981, guid: 532b016e902860e46a1eef50da79a235, type: 3}
-  - {fileID: 1294505247991906981, guid: 88a92d9f46793344fa5d84731e54306e, type: 3}
+  - {fileID: 1294505247991906981, guid: 0ab35131049243747952296e818d260d, type: 3}
+  - {fileID: 1294505247991906981, guid: abf0d9499258f8947a73441a26c325e3, type: 3}
+  - {fileID: 1294505247991906981, guid: 6aa6efaa21458e148a5cf5dbe8f39067, type: 3}
