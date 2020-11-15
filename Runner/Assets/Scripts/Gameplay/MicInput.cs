@@ -5,7 +5,7 @@ public class MicInput : MonoBehaviour
 {
     private const float measureInterval = 0.1f;
 
-    [SerializeField] private float inputThreshold = 0.25f;
+    [SerializeField] private FloatVariable inputThreshold;
     [SerializeField] private AudioSource audioSource;
 
     public static event Action MicInputEvent;
@@ -42,7 +42,7 @@ public class MicInput : MonoBehaviour
                 if (sample > maxAmplitude)
                     maxAmplitude = sample;
 
-            if (maxAmplitude > inputThreshold)
+            if (maxAmplitude > inputThreshold.Value)
             {
                 MicInputEvent?.Invoke();
                 Debug.LogWarning($"PV-MicInputEvent, maxAmplitude: {maxAmplitude}");
