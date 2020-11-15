@@ -7,6 +7,7 @@ public class Runner : MonoBehaviour
 
     [SerializeField] private float lineDistance;
     [SerializeField] private CharacterController characterController;
+    [SerializeField] private MeshRenderer meshRenderer;
 
     private CharacterData characterData;
     private Vector3 direction;
@@ -17,6 +18,7 @@ public class Runner : MonoBehaviour
     private void Start()
     {
         characterData = gameplayData.CharacterData;
+        meshRenderer.material = characterData.Material;
         direction = new Vector3(0, 0, characterData.ForwardSpeed);
         currentLine = 0;
 

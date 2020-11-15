@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 1289960189}
   - component: {fileID: 1289960193}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Runner
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -883,6 +883,7 @@ MonoBehaviour:
   gameplayData: {fileID: 11400000, guid: 284df63aa8778ad4dbe19c07f7c239bf, type: 2}
   lineDistance: 3
   characterController: {fileID: 1289960193}
+  meshRenderer: {fileID: 1289960190}
 --- !u!1 &1387288270
 GameObject:
   m_ObjectHideFlags: 0
