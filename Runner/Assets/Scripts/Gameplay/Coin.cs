@@ -6,7 +6,7 @@ public class Coin : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            GameProgress.CurrentScore++;
+            GameProgress.IncrementScore();
             Destroy(gameObject);
         }
     }

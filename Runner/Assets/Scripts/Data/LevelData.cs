@@ -5,6 +5,7 @@ using UnityEngine;
 [Serializable]
 public class LevelData : ScriptableObject
 {
+    public int TargetScore;
     public Sprite MenuImage;
     public Material FloorMaterial;
     public Material ObstacleMaterial;
@@ -13,6 +14,6 @@ public class LevelData : ScriptableObject
 
     public override string ToString()
     {
-        return $"Floor:{FloorMaterial} Obstacle:{ObstacleMaterial} Enemy:{EnemyMaterial}";
+        return $"{name}, Score {TargetScore}, Floor:{FloorMaterial} Obstacle:{ObstacleMaterial} Enemy:{EnemyMaterial}";
     }
 }
