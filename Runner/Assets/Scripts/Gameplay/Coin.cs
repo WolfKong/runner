@@ -7,8 +7,8 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        transform.localEulerAngles = 90 * Vector3.forward;
-        transform.DOLocalRotate(new Vector3(0, 360, 90), 1, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
+        transform.localEulerAngles = 90 * Vector3.right;
+        transform.DOLocalRotate(new Vector3(90, 360, 0), 1, RotateMode.FastBeyond360).SetEase(Ease.Linear).SetLoops(-1);
     }
 
     private void OnTriggerEnter(Collider collider)
