@@ -16,7 +16,7 @@ MonoBehaviour:
   MenuImage: {fileID: 21300000, guid: ac549606930f71d41b19efacb890038a, type: 3}
   FloorMaterial: {fileID: 2100000, guid: a642049e357439b4e9fee2aa8ea06dc7, type: 2}
   ObstacleMaterial: {fileID: 2100000, guid: 761de1e6c1a16554ba72026f994febe2, type: 2}
-  EnemyMaterial: {fileID: 0}
+  EnemyMaterial: {fileID: 2100000, guid: c3976bdd1f0cfca42a0cb44436362092, type: 2}
   LevelTiles:
   - {fileID: 1294505247991906981, guid: 5e5a3bd22f0570c47b39f3bd3977aa61, type: 3}
   - {fileID: 1294505247991906981, guid: 44a1e0550022eaa42b3587c1f483ec7c, type: 3}
