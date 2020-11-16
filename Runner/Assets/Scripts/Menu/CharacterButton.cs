@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class CharacterButton : MonoBehaviour
+public class CharacterButton : MonoBehaviour, IDataUI
 {
     [SerializeField] private GameplayData gameplayData;
     [SerializeField] private Image image;
@@ -16,11 +16,11 @@ public class CharacterButton : MonoBehaviour
         button.onClick.AddListener(OnClick);
     }
 
-    public void SetData(CharacterData data)
+    public void SetData(ScriptableObject data)
     {
-        characterData = data;
-        image.color = data.Material.color;
-        nameText.text = data.name;
+        characterData = (CharacterData)data;
+        image.color = characterData.Material.color;
+        nameText.text = characterData.name;
 
         selectedImage.SetActive(gameplayData.CharacterData == characterData);
     }

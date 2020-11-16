@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelButton : MonoBehaviour
+public class LevelButton : MonoBehaviour, IDataUI
 {
     [SerializeField] private GameplayData gameplayData;
     [SerializeField] private Image image;
@@ -16,12 +16,12 @@ public class LevelButton : MonoBehaviour
         button.onClick.AddListener(OnClick);
     }
 
-    public void SetData(LevelData data)
+    public void SetData(ScriptableObject data)
     {
-        levelData = data;
-        image.sprite = data.MenuImage;
-        nameText.text = data.name;
-        targetScore.text = $"Target: {data.TargetScore}";
+        levelData = (LevelData)data;
+        image.sprite = levelData.MenuImage;
+        nameText.text = levelData.name;
+        targetScore.text = $"Target: {levelData.TargetScore}";
     }
 
     private void OnClick()

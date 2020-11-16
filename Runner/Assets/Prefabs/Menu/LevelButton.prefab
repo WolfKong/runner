@@ -314,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3544077406743802676}
   - component: {fileID: 1425371293933595519}
-  - component: {fileID: 2982147937050251348}
+  - component: {fileID: 1311363973912912135}
   - component: {fileID: 6090787401156334855}
   m_Layer: 5
   m_Name: LevelButton
@@ -351,7 +351,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7212055892640542298}
   m_CullTransparentMesh: 0
---- !u!114 &2982147937050251348
+--- !u!114 &1311363973912912135
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
