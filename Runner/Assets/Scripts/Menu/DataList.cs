@@ -14,6 +14,8 @@ public class DataList<T, SO> : MonoBehaviour where T : IDataUI where SO : Script
 
         foreach (var obj in objects)
             dataList.Add((SO)obj);
+
+        dataList.Sort(CompareData);
     }
 
     private void Start()
@@ -27,5 +29,10 @@ public class DataList<T, SO> : MonoBehaviour where T : IDataUI where SO : Script
             else
                 dataUI.SetData(data);
         }
+    }
+
+    protected virtual int CompareData(SO a, SO b)
+    {
+        return a.name.CompareTo(b.name);
     }
 }
