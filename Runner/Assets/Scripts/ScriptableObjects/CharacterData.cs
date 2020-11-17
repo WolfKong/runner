@@ -10,6 +10,7 @@ public class CharacterData : ScriptableObject
     public float JumpForce;
     public float Gravity;
     public Material Material;
+    public Sprite Sprite;
 
     public override string ToString()
     {

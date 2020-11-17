@@ -19,7 +19,7 @@ public class CharacterButton : MonoBehaviour, IDataUI
     public void SetData(ScriptableObject data)
     {
         characterData = (CharacterData)data;
-        image.color = characterData.Material.color;
+        image.sprite = characterData.Sprite;
         nameText.text = characterData.name;
 
         selectedImage.SetActive(gameplayData.CharacterData == characterData);
