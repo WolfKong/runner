@@ -79,7 +79,7 @@ public class MicInput : MonoBehaviour
             MicInputEvent?.Invoke();
             Debug.LogWarning($"PV-MicInputEvent, maxAmplitude: {maxAmplitude}, sqrt {sqrt}");
         }
-        Debug.Log($"PV-maxAmplitude: {maxAmplitude}, sqrt {sqrt}");
+        // Debug.Log($"PV-maxAmplitude: {maxAmplitude}, sqrt {sqrt}");
     }
 
     private void OnApplicationFocus(bool focus)
