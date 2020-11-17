@@ -17,3 +17,4 @@ MonoBehaviour:
   JumpForce: 12
   Gravity: 24
   Material: {fileID: 2100000, guid: 7425942272a0abe46a4a758645c8e948, type: 2}
+  Sprite: {fileID: 21300000, guid: e06a9e0f85c635f48925ed3f0dc063bf, type: 3}
