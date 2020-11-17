@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class GameplayRules : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class GameplayRules : MonoBehaviour
         {
             gameOver = true;
             SceneLoader.LoadScene("LevelComplete");
+
+            var postData = new Dictionary<string, string> { { levelData.name, playerScore.Value.ToString() } };
+            ServiceLocator.Instance.Get<RestAPI>().Post("https://www.example.com", postData);
         }
     }
 }
