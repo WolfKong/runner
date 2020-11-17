@@ -6,6 +6,7 @@ public class SceneLoader : MonoBehaviour
 {
     private static SceneLoader instance;
 
+    [SerializeField] private GameplayData gameplayData;
     [SerializeField] private Animator animatorPrefab;
     private Animator animator;
 
