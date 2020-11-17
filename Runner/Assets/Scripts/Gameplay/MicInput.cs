@@ -4,26 +4,45 @@ using UnityEngine;
 public class MicInput : MonoBehaviour
 {
     private const float measureInterval = 0.1f;
+    private const int sampleWindow = 128;
 
     [SerializeField] private FloatVariable inputThreshold;
-    [SerializeField] private AudioSource audioSource;
 
     public static event Action MicInputEvent;
 
     private float time = 0;
+    private string deviceName;
+    private bool initialized;
+    private AudioClip audioClip;
 
-    private void Start()
+    private void OnEnable() => StartMicrophone();
+
+    private void OnDisable() => StopMicrophone();
+    private void OnDestroy() => StopMicrophone();
+
+    private void StartMicrophone()
     {
         var devices = Microphone.devices;
 
         if (devices.Length > 0)
         {
-            audioSource.clip = Microphone.Start(Microphone.devices[0], true, 10, 44100);
-            audioSource.Play();
+            deviceName = Microphone.devices[0];
+            audioClip = Microphone.Start(deviceName, true, 10, 44100);
+            initialized = true;
         }
         else
         {
-            Debug.LogWarning("MicInput: No Microphone Available!");
+            Debug.LogError("MicInput: No Microphone Available!");
+            Destroy(this);
+        }
+    }
+
+    private void StopMicrophone()
+    {
+        if (!string.IsNullOrEmpty(deviceName))
+        {
+            Microphone.End(deviceName);
+            initialized = false;
         }
     }
 
@@ -34,19 +53,45 @@ public class MicInput : MonoBehaviour
         if (time > measureInterval)
         {
             time = 0;
-            var samples = new float[1024];
-            audioSource.GetOutputData(samples, 0);
+            MeasureInput();
+        }
+    }
 
-            var maxAmplitude = 0f;
-            foreach (var sample in samples)
-                if (sample > maxAmplitude)
-                    maxAmplitude = sample;
+    private void MeasureInput()
+    {
+        int micPosition = Microphone.GetPosition(deviceName) - (sampleWindow + 1);
+        if (micPosition < 0)
+            return;
 
-            if (maxAmplitude > inputThreshold.Value)
-            {
-                MicInputEvent?.Invoke();
-                Debug.LogWarning($"PV-MicInputEvent, maxAmplitude: {maxAmplitude}");
-            }
+        var samples = new float[sampleWindow];
+        audioClip.GetData(samples, micPosition);
+
+        var maxAmplitude = 0f;
+        foreach (var sample in samples)
+        {
+            if (sample * sample > maxAmplitude)
+                maxAmplitude = sample * sample;
+        }
+
+        var sqrt = Mathf.Sqrt(maxAmplitude);
+        if (Mathf.Sqrt(maxAmplitude) > inputThreshold.Value)
+        {
+            MicInputEvent?.Invoke();
+            Debug.LogWarning($"PV-MicInputEvent, maxAmplitude: {maxAmplitude}, sqrt {sqrt}");
+        }
+        Debug.Log($"PV-maxAmplitude: {maxAmplitude}, sqrt {sqrt}");
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (focus)
+        {
+            if (!initialized)
+                StartMicrophone();
+        }
+        else
+        {
+            StopMicrophone();
         }
     }
 }
