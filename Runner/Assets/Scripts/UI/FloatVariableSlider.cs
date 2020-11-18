@@ -8,12 +8,24 @@ public class FloatVariableSlider : MonoBehaviour
 
     private void Start()
     {
-        slider.value = floatVariable.Value;
+        var value = PlayerPrefs.GetFloat(floatVariable.name, slider.value);
+        floatVariable.Value = value;
+
+        slider.value = value;
         slider.onValueChanged.AddListener(OnSliderEvent);
     }
 
     private void OnSliderEvent(float sliderValue)
     {
         floatVariable.Value = sliderValue;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetFloat(floatVariable.name, floatVariable.Value);
+
+#if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(floatVariable);
+#endif
     }
 }
