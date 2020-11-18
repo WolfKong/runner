@@ -352,6 +352,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameplayData: {fileID: 11400000, guid: 284df63aa8778ad4dbe19c07f7c239bf, type: 2}
   targetScore: {fileID: 336155578}
+  tutorialPopup: {fileID: 2588567454651876913, guid: 2008b2b9468bf644b94ed7caa322d1b5, type: 3}
 --- !u!222 &316493802
 CanvasRenderer:
   m_ObjectHideFlags: 0
