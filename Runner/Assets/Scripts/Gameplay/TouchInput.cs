@@ -14,7 +14,7 @@ public class TouchInput : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
-        screenMiddle = rectTransform.rect.width / 2;
+        screenMiddle = Screen.width / 2;
     }
 
     private void Update()
